@@ -1,7 +1,7 @@
-# heres the normal version of luftwaffe
+# hello from dubai :)
 
-still no luftwaffe gold edition leak :(
+still no oyvey gold edition leak :(
 
-credits: me, doick, KowkZombie and Cxiy!
+credits: everyone
 
-![Timeline_14](https://github.com/user-attachments/assets/157b87e6-832d-4cbb-8937-ce834e4eca84)
+![Timeline_14](https://cdn.discordapp.com/attachments/1365389445422911539/1451479736055496734/whatsappsense.mp3?ex=69465358&is=694501d8&hm=2324b4af89c8e7c2bd66736123bd7e8749479dbb2d54c5ea459363daca196311&)
