@@ -1,0 +1,30 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "opm.whatsapp.mixin.mixins",
+  "refmap": "mixins.whatsapp.refmap.json",
+  "mixins": [
+    "MixinBlockLiquid",
+    "MixinEntityPlayer",
+    "MixinEntityPlayerSP",
+    "MixinEntityRenderer",
+    "MixinGuiNewChat",
+    "MixinGuiPlayerTabOverlay",
+    "MixinGuiScreen",
+    "MixinItemRenderer",
+    "MixinMinecraft",
+    "MixinModelPlayer",
+    "MixinNetworkManager",
+    "MixinPlayerControllerMP",
+    "MixinRenderEnderCrystal",
+    "MixinRenderItem",
+    "MixinWorld",
+    "access.IEntityPlayerSP",
+    "access.IEntityLivingBase",
+    "access.INetworkManager",
+    "access.ISPacketPlayerPosLook",
+    "access.IMinecraft",
+    "access.ITimer",
+    "MixinEntityLivingBase"
+  ]
+}

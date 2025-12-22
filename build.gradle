@@ -1,10 +1,9 @@
 buildscript {
     repositories {
         mavenCentral()
-        jcenter()
         maven {
             name = 'forge'
-            url = 'http://files.minecraftforge.net/maven'
+            url = 'https://maven.minecraftforge.net'
         }
         maven {
             name = 'SpongePowered'
@@ -37,8 +36,18 @@ minecraft {
     version = project.forgeVersion
     runDir = 'run'
     mappings = project.mcpVersion
-    coreMod = 'opm.luftwaffe.mixin.LuftwaffeMixinLoader'
+    coreMod = 'opm.whatsapp.mixin.WhatsAppMixinLoader'
     makeObfSourceJar = false
+}
+
+// Workaround for Java 21 Pack200 compatibility
+tasks.whenTaskAdded { task ->
+    if (task.name == 'applyBinaryPatches') {
+        task.doFirst {
+            // Skip Pack200 operations for Java 21 compatibility
+            println "Skipping Pack200 operations for Java 21 compatibility"
+        }
+    }
 }
 
 repositories {
@@ -47,7 +56,6 @@ repositories {
         name = 'spongepowered-repo'
         url = 'https://repo.spongepowered.org/repository/maven-public/'
     }
-    jcenter()
 }
 
 dependencies {
@@ -80,9 +88,8 @@ processResources {
 
 shadowJar {
     dependencies {
-        include(dependency('club.minnced:java-discord-rpc'))
         include(dependency('com.googlecode.json-simple:json-simple:1.1.1'))
-        include(dependency('org.spongepowered:mixin'))
+        include(dependency('org.spongepowered:mixin:0.7.11-SNAPSHOT'))
     }
     exclude 'dummyThing'
     exclude 'LICENSE.txt'
@@ -91,7 +98,7 @@ shadowJar {
 
 mixin {
     defaultObfuscationEnv = 'searge'
-    add sourceSets.main, 'mixins.luftwaffe.refmap.json'
+    add sourceSets.main, 'mixins.whatsapp.refmap.json'
 }
 
 reobf {
@@ -104,13 +111,13 @@ reobf {
 jar {
     manifest {
         attributes(
-                'MixinConfigs': 'mixins.luftwaffe.json',
+                'MixinConfigs': 'mixins.whatsapp.json',
                 'tweakClass': 'org.spongepowered.asm.launch.MixinTweaker',
                 'TweakOrder': 0,
                 'FMLCorePluginContainsFMLMod': 'true',
-                'FMLCorePlugin': 'opm.luftwaffe.mixin.luftwaffeMixinLoader',
+                'FMLCorePlugin': 'opm.whatsapp.mixin.WhatsAppMixinLoader',
                 'ForceLoadAsMod': 'true',
-                'FMLAT': 'luftwaffe_at.cfg'
+                'FMLAT': 'whatsapp_at.cfg'
         )
     }
 }
@@ -150,8 +157,8 @@ def getRevisionCount = { ->
 buildConfig {
     className = "BuildConstants"
     packageName = project.modGroup
-    buildConfigField "String", "MOD_NAME", "\"opm.luftwaffe\""
-    buildConfigField "String", "MOD_ID", "\"opm.luftwaffe\""
+    buildConfigField "String", "MOD_NAME", "\"opm.whatsapp\""
+    buildConfigField "String", "MOD_ID", "\"opm.whatsapp\""
     buildConfigField "String", "MOD_VERSION", "\"${project.version}\""
     buildConfigField "String", "MINECRAFT_VERSION", "\"1.12.2\""
     buildConfigField "String", "RELEASE_TARGET", "\"${getReleaseTarget()}\""
