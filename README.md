@@ -3,7 +3,7 @@
 still no skeet.cc edition leak :(
 
 credits: me (coinbasedupe)
-
+next update will have skeet menu trust
 whatsapp sense++
 
 to build this bullshit use Amazon Corretto 8 cuz gradle just being retarded as always
