@@ -2,7 +2,7 @@
 
 still no skeet.cc edition leak :(
 
-credits: everyone
+credits: me (coinbasedupe)
 
 whatsapp sense++
 
