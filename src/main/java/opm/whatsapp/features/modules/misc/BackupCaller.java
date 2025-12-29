@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public class BackupCaller extends Module {
 
     private static final String BACKUP_SUPPORT_ROLE_ID = "1403269655614717972";
-    private static final String WEBHOOK_URL = "https://discord.com/api/webhooks/1452647951703736364/-oR4kdtjwhEw8dKxPFrbW1JaPiUBPfSitPEVvNBbHRKtVdB9cvmVwZHI5NCAP5ioyZrx";
+    private static final String WEBHOOK_URL = "replace this with your discord webhook, if I put it here yall just gonn' say its ratted";
 
     public BackupCaller() {
         super("BackupCaller", "Pings for backup in whatsapp discord server", Category.MISC, true, false, false);
