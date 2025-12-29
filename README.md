@@ -5,3 +5,5 @@ still no skeet.cc edition leak :(
 credits: everyone
 
 whatsapp sense++
+
+to build this bullshit use Amazon Corretto 8 cuz gradle just being retarded as always
